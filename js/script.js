@@ -1,35 +1,53 @@
-let amountElement = document.querySelector(".js-form__fieldAmount");
-let currencyElement = document.querySelector(".js-form__fieldCurrency");
-let formElement = document.querySelector(".js-form");
-let resultElement = document.querySelector(".js-form__result");
-let usd = 4.23;
-let eur = 4.71;
-let nok = 0.45;
+{
+    const calculateResult = (amount, currency) => {
+        const usd = 4.23;
+        const eur = 4.71;
+        const nok = 0.45;
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+        switch (currency) {
+            case "USD":
+                return amount / usd;
 
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
-    let result;
+            case "EUR":
+                return amount / eur;
 
-    switch (currency) {
-        case "USD":
-            result = amount / usd;
-            break;
+            case "NOK":
+                return amount / nok;
+        }
+    };
 
-        case "EUR":
-            result = amount / eur;
-            break;
+    const updateResultText = (amount, result, currency) => {
+        const resultElement = document.querySelector(".js-form__result");
 
-        case "NOK":
-            result = amount / nok;
-            break;
-    }
-    resultElement.innerText = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
-});
+        resultElement.innerText = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
+    };
 
 
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const amountElement = document.querySelector(".js-form__fieldAmount");
+        const currencyElement = document.querySelector(".js-form__fieldCurrency");
+
+
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
+
+
+        const result = calculateResult(amount, currency);
+
+        updateResultText(amount, result, currency);
+
+    };
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+
+    init();
+}
 
 
 
@@ -42,19 +60,21 @@ formElement.addEventListener("submit", (event) => {
 
 
 
-// let heightElelement = document.querySelector(".js-height");
-// let formElelement = document.querySelector(".js-form");
-// let weightElelement = document.querySelector(".js-weight");
-// let bmiElelement = document.querySelector(".js-bmi");
+
+
+// const heightElelement = document.querySelector(".js-height");
+// const formElelement = document.querySelector(".js-form");
+// const weightElelement = document.querySelector(".js-weight");
+// const bmiElelement = document.querySelector(".js-bmi");
 
 // formElelement.addEventListener("submit", (event) => {
 //     event.preventDefault();
 
 
-//     let height = heightElelement.value;
-//     let weight = weightElelement.value;
+//     const height = heightElelement.value;
+//     const weight = weightElelement.value;
 
-//     let bmi = weight / ((height / 100) ** 2);
+//     const bmi = weight / ((height / 100) ** 2);
 
 //     bmiElelement.innerText = bmi.toFixed(2);
 
