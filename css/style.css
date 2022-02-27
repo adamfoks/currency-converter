@@ -13,12 +13,17 @@ body {
     font-family: 'Lato', sans-serif;
     background-image: url(../img/money.jpg);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+
 }
 
-
 .container {
-    max-width: 600px;
-    margin: 20px auto;
+    flex-basis: 550px;
+    margin: 50px auto;
     padding: 0 20px;   
     font-size: 20px;
     line-height: 150%;
