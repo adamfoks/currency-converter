@@ -4,11 +4,12 @@
 
 .form__fieldset {
     border: 1px solid rgb(128, 127, 177);
-    background-color: rgba(255, 255, 255, 0.527);
-    /* border: none; */
+    background-color: rgba(255, 255, 255, 0.76);
+    border: none;
     padding: 20px;
     border-radius: 5px;
     margin: 20px 0;
+    box-shadow: 0 0 30px #444444;
 }
 
 .form__legend {
@@ -32,7 +33,7 @@
     width: 100%;
     max-width: 200px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.548);
+    background-color: rgba(255, 255, 255, 0.76);
     color: black;
 }
 
@@ -43,6 +44,7 @@
     background-color: rgb(69, 66, 214);
     color: white;
     border-radius: 5px;
+    box-shadow: 0 0 30px #444444;
 }
 
 .form__button:hover {
@@ -57,10 +59,11 @@
     text-align: center;
     font-weight: bold;
     font-size: 24px;
-    background-color: rgba(255, 255, 255, 0.548);
+    background-color: rgba(255, 255, 255, 0.76);
     color: black;
     border-radius: 5px;
     margin-top: 20px;
+    box-shadow: 0 0 30px #444444;
 }
 
 .form__list {
